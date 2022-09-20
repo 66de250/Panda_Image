@@ -1,4 +1,6 @@
 QT       += core gui
+#打印功能
+QT += printsupport
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -10,10 +12,12 @@ CONFIG += c++17
 
 SOURCES += \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    myimagewidget.cpp
 
 HEADERS += \
-    mainwindow.h
+    mainwindow.h \
+    myimagewidget.h
 
 FORMS += \
     mainwindow.ui
@@ -23,13 +27,13 @@ qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
-LIBS += E:\Qt\opencv\opencv-460-build-64\lib\libopencv_*.a
-INCLUDEPATH += E:\Qt\opencv\opencv-460-build-64\install\include
-               E:\Qt\opencv\opencv-460-build-64\install\include\opencv2
-CONFIG(debug, debug|release): {
-LIBS += -LE:\Qt\opencv\opencv-460-build-64\install\x64\mingw\bin\
+#LIBS += E:\Qt\opencv\opencv-460-build-64\lib\libopencv_*.a
+#INCLUDEPATH += E:\Qt\opencv\opencv-460-build-64\install\include
+#               E:\Qt\opencv\opencv-460-build-64\install\include\opencv2
+#CONFIG(debug, debug|release): {
+#LIBS += -LE:\Qt\opencv\opencv-460-build-64\install\x64\mingw\bin\
 
-} else:CONFIG(release, debug|release): {
-LIBS += -LE:\Qt\opencv\opencv-460-build-64\install\x64\mingw\bin\
+#} else:CONFIG(release, debug|release): {
+#LIBS += -LE:\Qt\opencv\opencv-460-build-64\install\x64\mingw\bin\
 
-}
+#}
